@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fff">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="hackaton.pethelp2.controllers.EventAddView">
+        <RelativeLayout
+            android:id="@+id/map_ae_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="224dp">
+            <fragment
+                android:id="@+id/map_add_event"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </fragment>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_my_location"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/textwhopet"
+            android:layout_margin="8dp"
+            android:textSize="18sp"
+            android:layout_below="@+id/map_ae_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Кто попал в беду?"/>
+        <RelativeLayout
+            android:layout_below="@id/textwhopet"
+            android:id="@+id/choose_pet_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/btn_pet_dog"
+                android:src="@drawable/pet_dog"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+            <ImageView
+                android:id="@+id/btn_pet_cat"
+                android:src="@drawable/pet_cat"
+                android:layout_centerHorizontal="true"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+            <ImageView
+                android:id="@+id/btn_pet_other"
+                android:src="@drawable/pet_others"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+        </RelativeLayout>
+        <EditText
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:id="@+id/pet_other_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/choose_pet_wrap"
+            android:hint="Кто-то другой?"
+            android:background="@android:color/transparent"
+            android:lines="1"/>
+        <EditText
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:maxLines="5"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/description"
+            android:background="@android:color/transparent"
+            android:layout_below="@+id/descr_opt"
+            android:hint="Опишите, что случилось?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/descr_opt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/choose_pet_wrap"
+            android:layout_margin="16dp"
+            android:background="@drawable/btn_orange_orig"
+            android:drawableEnd="@drawable/ic_chevron"
+            android:drawableTint="#fff"
+            android:text="Что произошло?"
+            android:textColor="#fff" />
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/event_photo"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/description"/>
+        <TextView
+            android:id="@+id/text_can_help"
+            android:layout_below="@id/event_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:text="Чем могу помочь?"/>
+        <LinearLayout
+            android:id="@+id/support_wrap"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@id/text_can_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/support_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+        <Button
+            android:layout_margin="16dp"
+            android:layout_below="@id/support_wrap"
+            android:id="@+id/btn_upload_event"
+            android:text="Разместить сообщение"
+            android:textColor="#fff"
+            android:background="@drawable/btn_green_orig"
+            android:drawableEnd="@drawable/ic_chevron"
+            android:drawableTint="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="128dp"/>
+    </RelativeLayout>
+</ScrollView>
+

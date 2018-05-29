@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="hackaton.pethelp2.controllers.MapsActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="#ffffff"
+        app:title="@string/title_upper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.Toolbar>
+    <fragment
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_my_location"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btn_help"
+                android:layout_width="256dp"
+                android:layout_height="48dp"
+                android:layout_alignEnd="@+id/btn_create"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/btn_create"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/btn_help"/>
+
+            <Button
+                android:id="@+id/btn_create"
+                android:layout_width="256dp"
+                android:layout_height="48dp"
+                android:layout_above="@+id/btn_help"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/btn_event"/>
+        </RelativeLayout>
+    </fragment>
+
+</RelativeLayout>
+

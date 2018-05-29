@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AiБолит</string>
+    <string name="title_activity_maps">AiБолит</string>\
+    <string name="title_upper">AiБолит</string>
+    <string name="facebook_app_id">1927157737506350</string>
+    <string name="login_text">Пожалуйста, авторизуйтесь, чтобы быть на связи с другими помогающими</string>
+</resources>
